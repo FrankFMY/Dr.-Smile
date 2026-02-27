@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section className="pt-20 lg:pt-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -52,11 +52,11 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <stat.icon className="w-5 h-5 text-mint mb-2" />
-                  <div className="text-2xl font-bold text-dark">
+                  <div className="text-xl sm:text-2xl font-bold text-dark">
                     {stat.value}
                   </div>
                   <div className="text-sm text-gray">{stat.label}</div>
@@ -69,7 +69,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative pb-8 lg:pb-10"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
@@ -77,11 +77,11 @@ export default function Hero() {
                 alt="Beautiful smile"
                 width={800}
                 height={900}
-                className="w-full h-[400px] lg:h-[540px] object-cover"
+                className="w-full h-[400px] md:h-[460px] lg:h-[540px] object-cover"
                 priority
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 hidden lg:flex items-center gap-3">
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 hidden md:flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-mint-light flex items-center justify-center">
                 <Shield className="w-6 h-6 text-mint-dark" />
               </div>

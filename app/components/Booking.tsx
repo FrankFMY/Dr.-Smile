@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { CalendarDays, CheckCircle } from "lucide-react";
+import { CheckCircle, ChevronDown } from "lucide-react";
 
 const serviceOptions = [
   "Лечение кариеса",
@@ -96,33 +96,33 @@ export default function Booking() {
                   <label className="block text-sm font-medium text-dark mb-1.5">
                     Услуга
                   </label>
-                  <select
-                    required
-                    defaultValue=""
-                    className="w-full px-4 py-3 rounded-xl border border-gray-border focus:border-sky focus:ring-2 focus:ring-sky/20 outline-none transition-all text-dark appearance-none bg-white"
-                  >
-                    <option value="" disabled>
-                      Выберите услугу
-                    </option>
-                    {serviceOptions.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
+                  <div className="relative">
+                    <select
+                      required
+                      defaultValue=""
+                      className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-border focus:border-sky focus:ring-2 focus:ring-sky/20 outline-none transition-all text-dark appearance-none bg-white"
+                    >
+                      <option value="" disabled>
+                        Выберите услугу
                       </option>
-                    ))}
-                  </select>
+                      {serviceOptions.map((s) => (
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="w-5 h-5 text-gray-light absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-dark mb-1.5">
                     Желаемая дата
                   </label>
-                  <div className="relative">
-                    <input
-                      type="date"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-border focus:border-sky focus:ring-2 focus:ring-sky/20 outline-none transition-all text-dark"
-                    />
-                    <CalendarDays className="w-5 h-5 text-gray-light absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                  </div>
+                  <input
+                    type="date"
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-border focus:border-sky focus:ring-2 focus:ring-sky/20 outline-none transition-all text-dark"
+                  />
                 </div>
               </div>
 
